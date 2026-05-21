@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get LoveLine</title>
+  <meta name="description" content="A private timeline for love, family, friends, and the chapters of you." />
+  <meta property="og:title" content="LoveLine — A timeline for every chapter" />
+  <meta property="og:description" content="Capture the moments that matter. Private timelines for couples, families, friends, and yourself." />
+  <meta property="og:image" content="https://karkiunique.github.io/loveline-legal/landing-logo.png" />
+  <meta property="og:url" content="https://karkiunique.github.io/loveline-legal/get.html" />
+
+  <style>
+    :root {
+      --bg: #fdf5ef;
+      --bg-2: #f5d4c8;
+      --text: #3a2a20;
+      --muted: #7a5a48;
+      --accent: #c87878;
+      --card: #fff;
+      --border: #eadcd1;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: linear-gradient(135deg, var(--bg) 0%, var(--bg-2) 100%);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 440px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+      text-align: center;
+    }
+    .logo {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto 28px;
+      display: block;
+    }
+    h1 {
+      font-size: 30px;
+      font-weight: 700;
+      font-style: italic;
+      margin: 0 0 14px;
+      letter-spacing: -0.5px;
+    }
+    p.tag {
+      font-size: 16px;
+      font-style: italic;
+      color: var(--muted);
+      margin: 0 0 36px;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 16px 24px;
+      margin-bottom: 12px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      transition: transform 80ms ease, box-shadow 80ms ease;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(200, 120, 120, 0.3);
+    }
+    .btn-secondary {
+      background: var(--card);
+      color: var(--accent);
+      border: 1.5px solid var(--accent);
+    }
+    .btn:active {
+      transform: translateY(1px);
+    }
+    .small {
+      margin-top: 28px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .small a { color: var(--accent); text-decoration: none; }
+    .platform-badge {
+      display: inline-block;
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin: 0 0 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="landing-logo.png" alt="LoveLine" class="logo" />
+
+    <h1>A timeline for every chapter</h1>
+    <p class="tag">Love. Family. Friends. Personal.<br />The moments worth keeping, in one private place.</p>
+
+    <div id="ios-block" style="display:none">
+      <div class="platform-badge">iOS</div>
+      <a id="ios-link" class="btn btn-primary" href="#">Download on the App Store</a>
+    </div>
+
+    <div id="android-block" style="display:none">
+      <div class="platform-badge">Android</div>
+      <a id="android-link" class="btn btn-primary" href="#">Get it on Google Play</a>
+    </div>
+
+    <div id="both-block">
+      <a id="ios-fallback" class="btn btn-primary" href="#">Download on the App Store</a>
+      <a id="android-fallback" class="btn btn-secondary" href="#">Get it on Google Play</a>
+    </div>
+
+    <p class="small">
+      <a href="index.html">Back</a>  ·  <a href="privacy.html">Privacy</a>  ·  <a href="terms.html">Terms</a>
+    </p>
+  </div>
+
+  <script>
+    // Edit these once the apps are live on the stores.
+    var IOS_URL     = "https://apps.apple.com/app/id6769537311";
+    var ANDROID_URL = "https://play.google.com/store/apps/details?id=com.lovelineapp";
+
+    document.getElementById("ios-link").href = IOS_URL;
+    document.getElementById("android-link").href = ANDROID_URL;
+    document.getElementById("ios-fallback").href = IOS_URL;
+    document.getElementById("android-fallback").href = ANDROID_URL;
+
+    var ua = navigator.userAgent || "";
+    var isIOS = /iPhone|iPad|iPod/i.test(ua);
+    var isAndroid = /Android/i.test(ua);
+
+    if (isIOS) {
+      document.getElementById("ios-block").style.display = "block";
+      document.getElementById("both-block").style.display = "none";
+      // Auto-redirect on iOS after brief visual moment so user sees branding.
+      setTimeout(function () { window.location.href = IOS_URL; }, 1200);
+    } else if (isAndroid) {
+      document.getElementById("android-block").style.display = "block";
+      document.getElementById("both-block").style.display = "none";
+      setTimeout(function () { window.location.href = ANDROID_URL; }, 1200);
+    }
+    // Desktop / other: leave both buttons visible, no auto-redirect.
+  </script>
+</body>
+</html>
