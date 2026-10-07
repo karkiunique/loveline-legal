@@ -77,19 +77,23 @@
     <ul>
       <li><strong>Account info:</strong> email address and password (hashed) when you sign up, and your display name and avatar color.</li>
       <li><strong>Couple info:</strong> the couple name and anniversary date, if you choose to add them.</li>
-      <li><strong>Moment content you create:</strong> titles, dates, descriptions, emoji, mood tags, card colors, photos, voice memos, approximate or precise location (only when you attach one), and metadata about any Spotify track you link to a moment.</li>
+      <li><strong>Moment content you create:</strong> titles, dates, descriptions, emoji, mood tags, card colors, photos, voice memos, approximate or precise location (only when you attach one), and details of any song you link to a moment (title, artist and artwork from the Apple Music catalog).</li>
       <li><strong>Private notes:</strong> optional notes you mark as private are stored encrypted at rest and visible only to you.</li>
+      <li><strong>Feature ideas you send:</strong> if you answer the in-app "What should we build next?" prompt, we store your idea, the app version and language, and the name you asked us to credit you with (only if you chose to be credited).</li>
       <li><strong>Device data:</strong> basic technical information such as app version, operating system, and crash logs, used to diagnose issues.</li>
     </ul>
     <p>
-      We do not collect advertising identifiers, we do not track you across other apps or websites,
-      and we do not sell personal information.
+      We do not sell personal information, and Loveline itself does not track you across other apps or websites.
+      The one exception is advertising for free-tier users: Google AdMob, which serves the optional rewarded ads,
+      may collect device identifiers. On iOS it can use your advertising identifier (IDFA) only if you allow
+      tracking when iOS asks. See section 8a.
     </p>
 
     <h2>2. How we use your information</h2>
     <ul>
       <li>To operate the app: sign you in, sync your timeline with your partner, display your moments, and deliver notifications you opt into.</li>
-      <li>To search Spotify when you attach a song to a moment. Your query is sent to Spotify via our server; Spotify's privacy policy applies to how Spotify handles those requests.</li>
+      <li>To search the Apple Music catalog when you attach a song to a moment. Your search is sent to Apple through our server; Apple's privacy policy applies to how Apple handles those requests.</li>
+      <li>To read the feature ideas you send, decide what to build next, and credit you by name if you asked to be credited and we build your idea.</li>
       <li>To show maps and place suggestions when you attach a location, using Google Maps services.</li>
       <li>To suggest date plans when you use the AI date planner ("let Loveline plan it"), using Anthropic's Claude. See section 8b.</li>
       <li>To diagnose crashes and improve reliability.</li>
@@ -145,7 +149,7 @@
     </p>
     <ul>
       <li>Supabase — authentication, database, file storage</li>
-      <li>Spotify — music search and track metadata</li>
+      <li>Apple Music — song search and track details for songs you link to moments</li>
       <li>Google Maps Platform — map display, location search, and finding real places nearby for date plans</li>
       <li>Anthropic (Claude) — writes AI date-plan suggestions, only when you use the AI date planner</li>
       <li>Expo — app delivery and push notifications</li>
