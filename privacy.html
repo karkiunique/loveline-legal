@@ -63,7 +63,7 @@
   <div class="container">
     <header>
       <h1>Privacy Policy</h1>
-      <p class="meta">Loveline · Last updated: May 19, 2026</p>
+      <p class="meta">Loveline · Last updated: October 7, 2026</p>
     </header>
 
     <p>
@@ -91,6 +91,7 @@
       <li>To operate the app: sign you in, sync your timeline with your partner, display your moments, and deliver notifications you opt into.</li>
       <li>To search Spotify when you attach a song to a moment. Your query is sent to Spotify via our server; Spotify's privacy policy applies to how Spotify handles those requests.</li>
       <li>To show maps and place suggestions when you attach a location, using Google Maps services.</li>
+      <li>To suggest date plans when you use the AI date planner ("let Loveline plan it"), using Anthropic's Claude. See section 8b.</li>
       <li>To diagnose crashes and improve reliability.</li>
       <li>To respond to you when you contact support.</li>
     </ul>
@@ -145,7 +146,8 @@
     <ul>
       <li>Supabase — authentication, database, file storage</li>
       <li>Spotify — music search and track metadata</li>
-      <li>Google Maps Platform — map display and location search</li>
+      <li>Google Maps Platform — map display, location search, and finding real places nearby for date plans</li>
+      <li>Anthropic (Claude) — writes AI date-plan suggestions, only when you use the AI date planner</li>
       <li>Expo — app delivery and push notifications</li>
       <li>RevenueCat — subscription receipt verification and entitlement management</li>
       <li>Apple App Store / Google Play — subscription billing and receipts</li>
@@ -156,6 +158,20 @@
     <p>
       Free-tier users can choose to watch short rewarded ads to unlock specific features (additional moments past the free limit, sharing a moment, or saving a moment to their device). These ads are served by Google AdMob. We request non-personalized ads by default; AdMob may still collect device identifiers (such as the Android Advertising ID or the iOS IDFA) and IP addresses to detect ad fraud, cap ad frequency, and serve ads. Loveline Pro subscribers do not see ads at all. For more on how Google handles this data, see
       <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">policies.google.com/technologies/ads</a>.
+    </p>
+
+    <h2>8b. AI date planning</h2>
+    <p>
+      The AI date planner is optional. It only runs after you agree to it in the app, and only when you ask it to plan an evening.
+    </p>
+    <ul>
+      <li><strong>Your location</strong> (or a neighbourhood you type instead) is sent to Google Maps Platform to find real places nearby. It is not sent to Anthropic, and we do not store it.</li>
+      <li><strong>Sent to Anthropic (Claude)</strong> to write the plans: the mood you pick (vibe, budget, distance and day), the list of nearby places Google returned, and a short summary of your past dates and moments, such as the kinds of places you have been and how you rated them. This summary does not include names, photos, exact locations, or anything you marked as private.</li>
+      <li><strong>What we keep:</strong> a record of the plans we suggested and which one you chose (place IDs and the suggestion text, without locations), and a daily count of how many plans you have used, so we can apply the free daily limit and improve the feature. If you save a plan, it becomes a planned date in your timeline like any other.</li>
+    </ul>
+    <p>
+      Anthropic processes this information to generate the suggestions under its own terms. For how Anthropic handles data, see
+      <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">anthropic.com/legal/privacy</a>.
     </p>
 
     <h2>9. Changes to this policy</h2>
